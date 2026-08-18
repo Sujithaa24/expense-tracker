@@ -1,0 +1,30 @@
+name: Expense Tracker Validation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate-project:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - name: Check README
+        run: test -f README.md
+
+      - name: Check HTML
+        run: test -f index.html
+
+      - name: Check CSS
+        run: test -f style.css
+
+      - name: Check JavaScript
+        run: test -f script.js
+
+      - name: Validation Success
+        run: echo "Expense Tracker Structure is Valid"
